@@ -41,8 +41,18 @@ class QuestionController extends Controller
 
             'nama.required'      => 'Nama tidak boleh kosong',
             'email.email'           => 'email tidak valid'
+
         ]);
-        return view('home-question-respon', $data);
+
+        $nama       = $request->nama;
+        $email      = $request->email;
+        $pertanyaan = $request->pertanyaan;
+        return redirect()->back()->with('info', "Terimakasih <strong>$nama!</strong> Pertanyaan : <strong>$pertanyaan</strong> akan segera direspon melalui email <stromng>$email</strong>.");
+        //return view('home-question-respon', $data);
+        //return redirect()->route('home')->with('info', 'Selamat, Kamu Lulus!');
+
+
+
     }
 
     /**
