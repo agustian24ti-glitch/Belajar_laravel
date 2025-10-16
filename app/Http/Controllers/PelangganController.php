@@ -1,9 +1,11 @@
 <?php
+
 namespace App\Http\Controllers;
 
 
 use App\Models\Pelanggan;
 use Illuminate\Http\Request;
+
 
 
 class PelangganController extends Controller
@@ -13,27 +15,29 @@ class PelangganController extends Controller
      */
     public function index()
     {
+
         $data['dataPelanggan'] = Pelanggan::all();
         return view('admin.pelanggan.index', $data);
     }
 
 
-    /**
+   /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
+    public function create(){
+
         return view('admin.pelanggan.create');
 
 
     }
 
 
-    /**
+   /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
+
         //dd($request->all())
 
 
@@ -70,6 +74,7 @@ class PelangganController extends Controller
     }
 
 
+
     /**
      * Update the specified resource in storage.
      */
@@ -77,6 +82,7 @@ class PelangganController extends Controller
     {
         //
     }
+
 
 
     /**
